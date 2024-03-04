@@ -1,0 +1,65 @@
+﻿@model PortaOneMVC.Models.CalculationResult
+
+@{
+    ViewData["Title"] = "Result";
+}
+
+<h1>Result</h1>
+
+<div>
+    <h4>Processed numbers from your file</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            Min number
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.MinNumber)
+        </dd>
+        <dt class="col-sm-3">
+            Max number
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.MaxNumber)
+        </dd>
+        <dt class="col-sm-3">
+            Average
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.AverageNumber)
+        </dd>
+        <dt class="col-sm-3">
+            Median
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Median)
+        </dd>
+        <dt class="col-sm-3">
+            Longest increasing sequence
+        </dt>
+        <dd class="col-sm-9 text-left">
+            Count elements in sequence: @Model.LongestIncreasingSequence.Count
+            <br />
+            @String.Join(", ", Model.LongestIncreasingSequence)
+        </dd>
+        <dt class="col-sm-3">
+            Longest decreasing sequence
+        </dt>
+        <dd class="col-sm-9 text-left">
+            Count elements in sequence: @Model.LongestDecreasingSequence.Count
+            <br />
+            @String.Join(", ", Model.LongestDecreasingSequence)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to upload file</a>
+</div>
+<style>
+    .col-sm-3 {
+        font-size: 18px; 
+    }
+
+    .col-sm-9 {
+        font-size: 18px;
+    }
